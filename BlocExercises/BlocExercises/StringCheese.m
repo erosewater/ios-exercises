@@ -20,28 +20,42 @@
 
 - (NSString *) cheeseNameWithoutCheeseSuffix:(NSString *)cheeseName {
     
-    // Need to find cheese in the string, replace with nothing. Discovered had to capture the leading space
-    NSRange cheeseFinder = [cheeseName rangeOfString:@" cheese" options:NSCaseInsensitiveSearch];
-    NSString *cheeseNameWithoutCheeseSuffix = [cheeseName stringByReplacingCharactersInRange: cheeseFinder withString:@""];
-    return cheeseNameWithoutCheeseSuffix;
+    // - First attempt didn't work :
+    // if ([cheeseName containsString:@" cheese"]) {
     
+        NSRange cheeseFinder = [cheeseName rangeOfString:@" cheese" options:NSCaseInsensitiveSearch];
+    
+    // First check to see if cheeseName has the suffix.
+    
+    if (cheeseFinder.length > 0) {
+    
+    // Tried a few variations here - the above seemed to work, though, I wasn't sure how to catch a nil value for the range otherwise (if "cheese" was not in the string).
+    
+        NSString *cheeseNameWithoutCheeseSuffix = [cheeseName stringByReplacingCharactersInRange: cheeseFinder withString:@""];
+        return cheeseNameWithoutCheeseSuffix;
+        
+    // If the string " cheese" was not found, just return cheeseName
+        
+    } else {
+      return cheeseName;
+    }
+    
+
     
 }
 
-// Have not updated this as yet - there's no test that corresponds to the code below.  Will try this after next checkpoint.
+// Used stringWithFormat after several failed attempts to get this to work
 
 - (NSString *) numberOfCheesesStringWithCheeseCount:(NSUInteger)cheeseCount {
     if (cheeseCount == 1) {
-        /* WORK HERE, ASSUMING THERE IS 1 CHEESE */
+        NSString *numberOfCheesesStringWithCheeseCount = [NSString stringWithFormat:@"%lu cheese", cheeseCount];
+        return numberOfCheesesStringWithCheeseCount;
     } else {
-        /* WORK HERE, ASSUMING THERE ARE 2+ CHEESES */
+        NSString *numberOfCheesesStringWithCheeseCount = [NSString stringWithFormat:@"%lu cheeses", cheeseCount];
+        return numberOfCheesesStringWithCheeseCount;
     }
     
-    /*
-     (You will learn more about if/else statements in the next checkpoint.)
-     */
     
-    return nil;
 }
 
 @end
