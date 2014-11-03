@@ -31,6 +31,8 @@
 }
 
 - (void)testThatCheeseFavoritingWorks {
+  // Assumption here is that the string "FavoriteCheeeseStringWithCheese" includes the text containing "My favorite cheese is," however, we are passing the name of our favorite cheese.  Modified the method to include that string.
+   // Setting these two objects
     NSString *ricottaString = @"ricotta";
     NSString *favoriteCheese = [self.stringCheese favoriteCheeseStringWithCheese:ricottaString];
     

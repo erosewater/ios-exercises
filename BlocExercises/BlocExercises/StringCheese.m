@@ -10,15 +10,25 @@
 
 @implementation StringCheese
 
+// Created a new string to include the phrase and the passed data for cheeseName, returned the whole sentence to make the test pass
+
 - (NSString *) favoriteCheeseStringWithCheese:(NSString *)cheeseName {
-    /* WORK HERE */
-    return nil;
+    NSString *favoriteCheeseStringWithCheese = @"My favorite cheese is";
+    NSString *fullSentence = [NSString stringWithFormat:@"%@ %@.", favoriteCheeseStringWithCheese, cheeseName];
+    return fullSentence;
 }
 
 - (NSString *) cheeseNameWithoutCheeseSuffix:(NSString *)cheeseName {
-    /* WORK HERE */
-    return nil;
+    
+    // Need to find cheese in the string, replace with nothing. Discovered had to capture the leading space
+    NSRange cheeseFinder = [cheeseName rangeOfString:@" cheese" options:NSCaseInsensitiveSearch];
+    NSString *cheeseNameWithoutCheeseSuffix = [cheeseName stringByReplacingCharactersInRange: cheeseFinder withString:@""];
+    return cheeseNameWithoutCheeseSuffix;
+    
+    
 }
+
+// Have not updated this as yet - there's no test that corresponds to the code below.  Will try this after next checkpoint.
 
 - (NSString *) numberOfCheesesStringWithCheeseCount:(NSUInteger)cheeseCount {
     if (cheeseCount == 1) {
