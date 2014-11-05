@@ -17,27 +17,24 @@
     NSInteger appleComputer = 1000;
     NSInteger bigApple = 1000000000;
     
-  // Tried this a few ways.  The case I didn't handle is numbers in between.  Wasn't sure how to do these without creating a long expression, however, I am still looking into this.
+  // Updated this exercise to handle numbers between the two items - just for fun.
     
     if (dollars < gum) {
         itemToReturn = @"get out of my store";
      }
-    else if (dollars == gum) {
+    else if (dollars == gum || (dollars > gum && dollars < apple)) {
         itemToReturn = @"have some gum";
      }
-    else if (dollars == apple) {
+    else if (dollars == apple || (dollars > apple && dollars < appleComputer)) {
         itemToReturn = @"have an apple";
      }
 
-    else if (dollars == appleComputer) {
+    else if (dollars == appleComputer || (dollars > appleComputer && dollars < bigApple)) {
         itemToReturn = @"have an Apple computer";
      }
-    else if (dollars == bigApple) {
+    else if (dollars == bigApple || dollars > bigApple) {
         itemToReturn = @"have The Big Apple";
-   } else {
-       itemToReturn = @"buy whatever you like up to %ld", (long)dollars;
-         }
-
+     }
     NSLog(@"For $%ld, Mary can: %@", (long)dollars, itemToReturn);
     return itemToReturn;
 }
