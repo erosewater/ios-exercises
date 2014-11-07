@@ -44,10 +44,10 @@
     NSArray *actualArray = [self.starTrekArrays arrayOfStarTrekCharactersFromString:testString];
     XCTAssertEqualObjects(expectedArray, actualArray, @"The returned array was different than expected.");
 
-    testString = [NSString stringWithFormat:@"%@;%@;%@", self.picard, self.crusher, self.worf];
-    expectedArray = @[self.picard, self.crusher, self.worf];
-    actualArray = [self.starTrekArrays arrayOfStarTrekCharactersFromString:testString];
-    XCTAssertEqualObjects(expectedArray, actualArray, @"The returned array was different than expected.");
+   testString = [NSString stringWithFormat:@"%@;%@;%@", self.picard, self.crusher, self.worf];
+   expectedArray = @[self.picard, self.crusher, self.worf];
+   actualArray = [self.starTrekArrays arrayOfStarTrekCharactersFromString:testString];
+   XCTAssertEqualObjects(expectedArray, actualArray, @"The returned array was different than expected.");
 }
 
 - (void) testThatArraysAreTurnedIntoStringsProperly {

@@ -44,7 +44,7 @@
 
     NSUInteger cost = 24;
     
-    NSUInteger finalCost = self.getsDiscount ? (cost *=.75) : (cost = 24);
+    NSUInteger finalCost = self.getsDiscount ? (cost *=.75) : (cost);
     
     
     return finalCost;
