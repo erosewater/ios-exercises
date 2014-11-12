@@ -23,7 +23,7 @@
 
 - (NSString *) stringOfStarTrekCharactersFromArray:(NSArray *)characterArray {
     
-   NSString *stringOfStarTrekCharactersFromArray = [characterArray componentsJoinedByString:@";"];
+    NSString *stringOfStarTrekCharactersFromArray = [characterArray componentsJoinedByString:@";"];
     
     return stringOfStarTrekCharactersFromArray;
 }
@@ -43,6 +43,7 @@
 - (BOOL) characterArrayContainsWorf:(NSArray *)characterArray {
     // if Worf is present Return YES, otherwise return NO.  I tried this a few ways.  My first assumption was I needed to filter the array to look for Worf, and and then evaluate the result set to see if it was empty or contained something, however, though my filter worked fine, I had some issues looking at the array or converting it to a string.  Worf was not there, for example, when he wasn't supposed to be, but my true/false test would fail.
     
+   
     NSString *allCharacters = [characterArray componentsJoinedByString:@";"];
     NSRange findWorf = [allCharacters rangeOfString:@"Worf" options:NSCaseInsensitiveSearch];
     if (findWorf.length > 0) {
