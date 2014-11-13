@@ -32,6 +32,12 @@
  @param arrayToRemember A mutable array.
  */
 - (void) rememberThisArrayForLater:(NSMutableArray *)arrayToRemember;
+@property (strong, nonatomic) NSMutableArray *strongArray;
+
+
+
+
+
 
 /**
  Provides the remembered mutable array.
@@ -39,7 +45,7 @@
  @return The remembered mutable array, or @c nil if none was provided.
  */
 - (NSMutableArray *) arrayYouShouldRemember;
-
+@property (strong, nonatomic) NSMutableArray *arrayYouShouldRemember;
 // --------------------------------------------------------------------
 
 /**
@@ -48,6 +54,7 @@
  @param arrayToCopy A mutable array.
  */
 - (void) copyThisArrayForLater:(NSMutableArray *)arrayToCopy;
+@property (nonatomic, copy) NSMutableArray *arrayIWillCopy;
 
 /**
  Provides a copy of the initially provided mutable array.
@@ -64,6 +71,7 @@
  @param floatToRemember A float.
  */
 - (void) rememberThisFloatForLater:(CGFloat)floatToRemember;
+@property (assign) CGFloat floatIWillRemember;
 
 /**
  Provides the remembered float.

@@ -11,30 +11,54 @@
 @implementation StuffRememberer
 
 - (void) rememberThisArrayForLater:(NSMutableArray *)arrayToRemember {
-    /* WORK HERE */
+    // removed mutable copy here - this sets the arrays equal
+    
+    self.strongArray= arrayToRemember;
+   
+    
+    
+    // Learned that this compares content - not whether they are using the same pointer, so not useful here.
+    if ([arrayToRemember isEqualToArray:self.strongArray]) {
+    
+    NSLog(@"In the method they are equal");
+    } else {
+    NSLog(@"they are not equal");
+    }
+    
+    
+   
 }
 
 - (void) copyThisArrayForLater:(NSMutableArray *)arrayToCopy {
-    /* WORK HERE */
+    
+    self.arrayIWillCopy= [arrayToCopy mutableCopy];
+    
+    
 }
 
 - (void) rememberThisFloatForLater:(CGFloat)floatToRemember {
-    /* WORK HERE */
+    self.floatIWillRemember = floatToRemember;
 }
 
 - (NSMutableArray *) arrayYouShouldRemember {
-    /* WORK HERE */
-    return [@[] mutableCopy];
+   NSLog(@"the array %@", self.strongArray);
+   
+   return self.strongArray;
+    
+    
+    
+    
+    
 }
 
 - (NSMutableArray *) arrayYouShouldCopy {
-    /* WORK HERE */
-    return [@[] mutableCopy];
+    
+    return self.arrayIWillCopy;
 }
 
 - (CGFloat) floatYouShouldRemember {
-    /* WORK HERE */
-    return 0.0f;
+    return _floatIWillRemember;
+    
 }
 
 @end
