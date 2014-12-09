@@ -85,8 +85,6 @@ println("\(favoriteDrinksX)")
 
 // not the most efficient way to do this.
 
-characters.count
-
 
 
 func favoriteDrinksArrayForCharacters(characters:Array<Dictionary<String, String>>) -> Array<String> {
