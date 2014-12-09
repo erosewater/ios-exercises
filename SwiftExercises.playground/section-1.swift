@@ -83,7 +83,7 @@ favoriteDrinksX = ["\(favoriteDrinkC)", "\(favoriteDrinkD)"]
 println("\(favoriteDrinksX)")
 
 
-// not the most efficient way to do this.
+// not the most efficient way to do this.  - will check out some other ways
 
 characters.count
 
